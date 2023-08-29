@@ -1,55 +1,56 @@
+## Introduction
 
-[![Project Status](https://img.shields.io/badge/status-under%20development-yellow)](https://github.com/EPFL-ENAC/zarr_geospatial_playground)
+This code is just a couple of tests I did on a Zarr file compared to a Cloud Optimized GeoTIFF (COG).
 
+The code in this repository performs the following tasks:
 
-# zarr_geospatial_playground
+- Downloads a batch of digital surface models
+- Creates a Zarr file from them
+- Loads the Zarr file into a Jupyter notebook
+- Repeats the process with GeoTIFF
+- Compares the file types
 
+**Conclusion**
 
+- The zarr file is significantly smaller than the GeoTiff.
+- The loading time is slightly better with the zarr file.
 
+**Notes**
 
-**What is included on this project?**
+- the chunks has not been taken into account
+- we do not use the capacity of zarr files to store multidimentional data
+- we are not using the [geozarr](https://github.com/zarr-developers/geozarr-spec) functionalities (under development)
 
-📦 A basic `pyproject.toml` file to provide installation, packaging and distribution for your project.
+## Installation
 
-🧪 Testing structure using [Pytest](https://docs.pytest.org/en/latest/).
+1. Clone this repository.
+2. Install the necessary dependencies.
+3. Run the Jupyter notebook.
 
-✅ Code linter [Ruff](https://github.com/charliermarsh/ruff).
+### Dependencies:
 
-✏️ Code formatter using [Black](https://github.com/psf/black).
+All external packages are defined into the `pyproject.toml`.
 
-🤝 Typing checking using [Mypy](https://mypy.readthedocs.io/en/stable/).
+### Project dependencies installation
 
-🔄 Continuous integration using [Github Actions](https://github.com/EPFL-ENAC/zarr_geospatial_playground/blob/main/.github/workflows) with jobs to check the quality of your code.
+To install the project dependencies, run `pip` as follows:
 
-📃 Documentation with [Sphinx](https://www.sphinx-doc.org/en/master/) and [Readthedocs](https://readthedocs.org/).
-
-
-
-## Project structure
-
-
-This repository contains the following files and folders:
-
+```bash
+pip install .
 ```
-📦 Repository
- ┣ 📁 .github : contain the github settings
- ┃ ┗  📁 ISSUE_TEMPLATE : contains issues templates
- ┃    ┗ 📜 *.yaml
- ┃ ┗  📁 workflows : contains CICD processes
- ┃    ┣ 📜 code_quality.yml : Ruff + Black + mypy
- ┃    ┗ 📜 tests.yml : pytest + CodeCov
- ┣ 📁 docs: contains the documentation.
- ┣ 📁 project_name: contains the project code.
- ┃ ┗ 📜 *.py
- ┣ 📁 test: contains the project tests.
- ┃ ┗ 📜 test_*.py
- ┣ 📜 .gitignore: lists the files/folders to ignore for git.
- ┣ 📜 pre-commit-config.yaml: configuration file for pre-commit.
- ┣ 📜 CITATION.cff: citation information.
- ┣ 📜 CODE_OF_CONDUCT.md: code of conduct.
- ┣ 📜 CONTRIBUTING.md: contributing guidelines.
- ┣ 📜 LICENSE: license file.
- ┣ 📜 pyproject.toml: project configuration file.
- ┣ 📜 README.md: markdown file containing the project's readme.
- ┣ 📜 readthedocs.yml: Settings for readthedocs.
- ```
+
+The `pyproject.toml` contains the `[project.optional-dependencies]` selection to define the development dependencies:
+
+To install these dependencies, run:
+
+```bash
+pip install .[dev]
+```
+
+### Jupyter Notebook
+
+To run the notebook, go to notebook folder of your project and run :
+
+```bash
+python -m notebook
+```
