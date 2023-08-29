@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Longchamp"
+  given-names: "Régis"
+  orcid: "https://orcid.org/0009-0009-4609-8473"
+title: "zarr_geospatial_playground"
+version: 0.0.1
+doi: 10.5281/zenodo.1234
+date-released: 2023-08-29
+url: "https://github.com/EPFL-ENAC/zarr_geospatial_playground"
