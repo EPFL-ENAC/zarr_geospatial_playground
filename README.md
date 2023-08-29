@@ -2,6 +2,8 @@
 
 This code is just a couple of tests I did on a Zarr file compared to a Cloud Optimized GeoTIFF (COG).
 
+![Alt text](zarr_vs_geotiff.png)
+
 The code in this repository performs the following tasks:
 
 - Downloads a batch of digital surface models
